@@ -11,3 +11,12 @@ interface AdminProps {
     Email: string;
     Icon:string;
 }
+interface MenuMapProps {
+    title: string;
+    path: string;
+}
+
+interface navSlideProps {
+    menuMapPropsList: MenuMapProps[];
+    onClose: () => void;
+}

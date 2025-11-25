@@ -1,6 +1,11 @@
+"use client";
+
 import styles from './Navbar.module.scss';
 import Image from "next/image";
 import Link from "next/link";
+import useDisclosure from "@/app/hook/useDisclosure";
+import ModalContainer from "../../ModalContainer/modalContainer";
+import NavSlide from "./navslide";
 
 function Blog({ Cover, Title, Url}: BlogProps) {
     return (
@@ -18,6 +23,12 @@ function Blog({ Cover, Title, Url}: BlogProps) {
 }
 
 function Navbar() {
+    const { opened, handle } = useDisclosure();
+    const menuMapProps: MenuMapProps[] = [
+        { title: "Quick Create", path: "/create" },
+        { title: "Transaction", path: "/transaction" },
+        { title: "Tools", path: "/tools" },
+    ];
     const BlogList: BlogProps[] = [
         {
             Cover: "/Navbar/transaction.svg",
@@ -56,9 +67,23 @@ function Navbar() {
                 </div>
                 <div className={styles.box}>
                     <div className={styles.button}>
-                        <p className={styles.plus}>+</p>
+                        <Image
+                            className={styles.action_plus}
+                            width={22}
+                            height={22}
+                            alt="plus_icon"
+                            src={"/Navbar/plus.svg"}
+                        ></Image>
                         <p className={styles.text}>Quick Create</p>
                     </div>
+                    <Image
+                        onClick={() => handle.open()}
+                        className={styles.action_hamberger}
+                        width={120}
+                        height={120}
+                        alt="hamberger_icon"
+                        src={"/Navbar/hamberger.svg"}
+                    ></Image>
                     {BlogList.map((item,index) => (
                         <Blog
                             key={index}
@@ -91,6 +116,12 @@ function Navbar() {
                     alt={Admin.Title}
                 ></Image>
             </div>
+            <ModalContainer opened={opened} onClose={handle.close}>
+                <NavSlide
+                    menuMapPropsList={menuMapProps}
+                    onClose={handle.close}
+                ></NavSlide>
+            </ModalContainer>
         </div>
     );
 }
