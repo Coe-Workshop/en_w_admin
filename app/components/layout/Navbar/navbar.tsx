@@ -66,7 +66,7 @@ function Navbar() {
                     </div>
                 </div>
                 <div className={styles.box}>
-                    <div className={styles.button}>
+                    <div className={styles.button} >
                         <Image
                             className={styles.action_plus}
                             width={22}
