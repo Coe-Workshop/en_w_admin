@@ -2,32 +2,31 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./Tools.module.scss";
-import { Pagination } from "@mantine/core";
-import "./pagination.css";
+import Pagination from "@/app/components/pagination/Pagination";
 import CategoryFilter from "@/app/components/filters/CategoryFilter/CategoryFilter";
 import SearchBar from "@/app/components/filters/SerchBar/SerchBar";
 
 function ToolsAction({
-                            Url,
-                            Title,
-                            Description,
-                            Available,
-                            Quatity,
+                            url,
+                            title,
+                            description,
+                            available,
+                            quatity,
                         }: ToolsMatches) {
     return (
         <div className={styles.column_layout}>
             <div className={styles.box_products}>
                 <Image
-                    src={Url}
-                    alt={Title}
+                    src={url}
+                    alt={title}
                     width={80}
                     height={80}
                     className={styles.img}
                 />
                 <div className={styles.tab}>
                     <div className={styles.details}>
-                        <h2>{Title}</h2>
-                        <p>{Description}</p>
+                        <h2>{title}</h2>
+                        <p>{description}</p>
                     </div>
                     <Image
                         src={"/Tools/operator.svg"}
@@ -39,8 +38,8 @@ function ToolsAction({
                 </div>
             </div>
             <div className={styles.stoke}>
-                <h3>{Available}</h3>
-                <h4>/ {Quatity}</h4>
+                <h3>{available}</h3>
+                <h4>/ {quatity}</h4>
             </div>
         </div>
     );
@@ -89,43 +88,42 @@ function Tools() {
             .then((data) => setTools(data));
     }, []);
     return (
-        <div>
+        <div className={styles.page_container}>
             <div className={styles.title_banner}>
-                <div className={styles.title_layout}>
-                    <h1>Tools List</h1>
+                    <div className={styles.title_layout}>
+                        <h1>Tools List</h1>
+                    </div>
+                    <div className={styles.filters}>
+                        <SearchBar
+                            onSearch={handleSearch}
+                            placeholder="Search by name ..."
+                        />
+                        <CategoryFilter onCategoryChange={handleCategoryChange} />
+                    </div>
                 </div>
-                <div className={styles.filters}>
-                    <SearchBar
-                        onSearch={handleSearch}
-                        placeholder="Search by name ..."
-                    />
-                    <CategoryFilter onCategoryChange={handleCategoryChange} />
+                <div className={styles.box}>
+                    {currentItems.map((item, id) => (
+                        <ToolsAction
+                            key={id}
+                            url={item.image}
+                            title={item.category}
+                            description={item.title}
+                            available={item.rating?.count - 1 || 0} //ค่อยแก้ตอนดึงข้อมูล
+                            quatity={item.rating?.count || 0}
+                        ></ToolsAction>
+                    ))}
                 </div>
-            </div>
-            <div className={styles.box}>
-                {currentItems.map((item, id) => (
-                    <ToolsAction
-                        key={id}
-                        Url={item.image}
-                        Title={item.category}
-                        Description={item.title}
-                        Available={item.rating?.count - 1 || 0} //ค่อยแก้ตอนดึงข้อมูล
-                        Quatity={item.rating?.count || 0}
-                    ></ToolsAction>
-                ))}
-            </div>
-            {totalPages > 1 && (
-                <div className="pagination-wrapper">
-                    <Pagination
-                        total={totalPages}
-                        value={currentPage}
-                        onChange={handlePageChange}
-                        withControls={false}
-                        siblings={1}
-                        boundaries={1}
-                    />
-                </div>
-            )}
+                {totalPages > 1 && (
+                    <div className="pagination_wrapper">
+                        <Pagination
+                            total={totalPages}
+                            currentPage={currentPage}
+                            onChange={handlePageChange}
+                            siblings={1}
+                            boundaries={1}
+                        />
+                    </div>
+                )}
         </div>
     );
 }

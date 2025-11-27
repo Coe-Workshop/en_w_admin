@@ -1,5 +1,5 @@
 @use "./../../styles/_breakpoints" as *;
-
+@use "./../../styles/variables" as *;
 .title_banner {
   display: flex;
   justify-content: space-between;
@@ -121,7 +121,7 @@
 
   p {
     font-size: 0.7rem;
-    color: #535353;
+    color: $sub-600;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
