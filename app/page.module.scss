@@ -1,0 +1,9 @@
+@use "styles/_breakpoints" as *;
+.landing {
+  padding: 0 1rem;
+  margin-left: 260px;
+  min-height: 100vh;
+  @include respond-to-max(sm){
+    margin-left: 0;
+  }
+}
