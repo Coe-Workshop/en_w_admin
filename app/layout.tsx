@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./styles/globals.scss";
-import Navbar from "@/app/components/layout/Navbar/navbar";
-import {MantineProvider} from "@mantine/core";
-
+import Navbar from "./components/layout/Navbar/Navbar";
 const geistInter = Inter({
   variable: "--font-Inter",
   subsets: ["latin"],
@@ -22,12 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistInter.variable} `}>
-      <div className="layout-container">
-        <Navbar />
-        <main className="layout-content">
-            <MantineProvider>{children}</MantineProvider>
-        </main>
-      </div>
+        <div className="layout-container">
+          <Navbar />
+          <main className="layout-content">{children}</main>
+        </div>
       </body>
     </html>
   );

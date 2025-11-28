@@ -2,23 +2,19 @@
 @use "../../../styles/_breakpoints" as *;
 
 .navbar {
-  width: 260px;
-  height: 100vh;
+  width: fit-content;
   background: $sub-50;
   padding: 25px 18px;
-  position: fixed;
-  left: 0;
-  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   @include respond-to-max(md) {
     background: $sub-0;
-    width: 100vw;
-    height: 80px;
+    width: 100%;
+    height: 100%;
   }
-  .navbar_inner{
+  .navbar_inner {
     @include respond-to-max(md) {
       display: flex;
       justify-content: space-between;
@@ -41,7 +37,7 @@
       color: gray;
     }
   }
-  .box{
+  .box {
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -51,7 +47,7 @@
       gap: 10px;
       margin-top: 0;
     }
-    .button{
+    .button {
       background-color: black;
       border-radius: 4.77px;
       display: flex;
@@ -60,11 +56,11 @@
       gap: 10px;
       cursor: pointer;
 
-      .action_plus{
+      .action_plus {
         object-fit: contain;
         flex-shrink: 0;
       }
-      .text{
+      .text {
         color: white;
       }
       @include respond-to-max(md) {
@@ -96,12 +92,12 @@
         display: block;
       }
     }
-    .button_list{
+    .button_list {
       display: flex;
       align-items: center;
       gap: 8px;
       padding-left: 6px;
-      .blog_image{
+      .blog_image {
         object-fit: contain;
         object-position: center;
       }
@@ -110,30 +106,30 @@
       }
     }
   }
-  .tab_admin{
+  .tab_admin {
     display: flex;
     align-items: center;
     justify-content: space-between;
     @include respond-to-max(md) {
       display: none;
     }
-    .admin{
+    .admin {
       display: flex;
       align-items: center;
       gap: 10px;
-      .blog_icon{
+      .blog_icon {
         border-radius: 50%;
         object-fit: cover;
         object-position: center;
         overflow: hidden;
       }
-      .name{
+      .name {
         font-size: 1rem;
         font-weight: 400;
       }
-      .email{
+      .email {
         font-size: 0.75rem;
-        color:gray;
+        color: gray;
       }
     }
   }
@@ -150,7 +146,7 @@
   padding: 20px 0;
   font-weight: bold;
   animation: slide 0.7s ease 0.3s;
-  @Keyframes slide {
+  @keyframes slide {
     from {
       transform: translateX(250px);
     }
@@ -159,7 +155,7 @@
     }
   }
 }
-.navSlide_imageContainer{
+.navSlide_imageContainer {
   padding-left: 15px;
 }
 .navSlide_menu {
