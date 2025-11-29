@@ -1,12 +1,13 @@
+"use client";
 import styles from "./page.module.scss";
-import Navbar from "@/app/components/Navbar/Navbar";
+import CreateItem from "@/app/components/ui/create_item/create";
 
-function page(){
+function Page() {
   return (
-      <div className={styles.landing}>
-        <Navbar></Navbar>
-      </div>
+    <div className={styles.landing}>
+      <CreateItem></CreateItem>
+    </div>
   );
 }
 
-export default page;
+export default Page;
