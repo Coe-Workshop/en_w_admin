@@ -4,7 +4,7 @@ import styles from "./Navbar.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import useDisclosure from "@/app/hook/useDisclosure";
-import ModalContainer from "../../ModalContainer/modalContainer";
+import ModalContainer from "../NavbarContainer/modalContainer";
 import NavSlide from "./Navslide";
 
 function Navbar() {
@@ -66,7 +66,7 @@ function Navbar() {
           </div>
         </div>
         <div className={styles.box}>
-          <div className={styles.button}>
+          <div className={styles.button_create}>
             <Image
               className={styles.action_plus}
               width={22}
@@ -109,7 +109,7 @@ function Navbar() {
           alt={Admin.title}
         ></Image>
       </div>
-      <ModalContainer opened={opened} onClose={handle.close}>
+      <ModalContainer margin="0" opened={opened} onClose={handle.close}>
         <NavSlide
           menuMapPropsList={menuMapProps}
           onClose={handle.close}

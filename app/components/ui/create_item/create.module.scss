@@ -1,9 +1,12 @@
 @import "../../../styles/variables";
 
 .container {
-  margin: auto;
+  margin-top: 120px;
+  margin-inline: auto;
   width: 703px;
   height: 416px;
   border: 1px solid $sub-1000;
   background-color: $sub-0;
+  position: relative;
+  z-index: 2;
 }

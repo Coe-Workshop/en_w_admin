@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { ModalContainerProps } from "./ModalContainer.types";
+import { ModalContainerProps } from "./modalContainer.types";
 import styles from "./modal.module.scss";
 
 const ModalContainer = ({
