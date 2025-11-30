@@ -1,22 +1,22 @@
 interface BlogProps {
-    Cover: string;
-    Title: string;
-    Url: string;
+  cover: string;
+  title: string;
+  url: string;
 }
 
 interface AdminProps {
-    ProFile: string;
-    Title: string;
-    Name: string;
-    Email: string;
-    Icon:string;
+  profile: string;
+  title: string;
+  name: string;
+  email: string;
+  icon: string;
 }
 interface MenuMapProps {
-    title: string;
-    path: string;
+  title: string;
+  path: string;
 }
 
 interface navSlideProps {
-    menuMapPropsList: MenuMapProps[];
-    onClose: () => void;
+  menuMapPropsList: MenuMapProps[];
+  onClose: () => void;
 }
