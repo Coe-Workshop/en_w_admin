@@ -28,7 +28,6 @@ body {
 .layout-container {
   position: relative;
   display: flex;
-
   flex-direction: column;
 
   @include bp.respond-to(md) {

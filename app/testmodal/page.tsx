@@ -1,22 +1,25 @@
 "use client";
 
-import React from "react";
-import useDisclosure from "../hook/useDisclosure";
-import ModalContainer from "../components/ModalContainer/modalContainer";
+import { useEffect } from "react";
+import { useModal } from "../hook/useModal";
+import Modal from "../components/ui/modal/modal";
 function page() {
-  const { opened, handle } = useDisclosure();
+  const { modalState, handle } = useModal();
+  useEffect(() => {
+    console.log("opened", modalState);
+  }, [modalState]);
   return (
     <div>
-      <button onClick={() => handle.open}>open</button>{" "}
-      <button onClick={() => handle.open}>open</button>{" "}
-      <button onClick={() => handle.open}>open</button>{" "}
-      <button onClick={() => handle.open}>open</button>{" "}
-      <button onClick={() => handle.open}>open</button>{" "}
-      <button onClick={() => handle.open}>open</button>{" "}
-      <button onClick={() => handle.open}>open</button>
-      <ModalContainer opened={opened} onClose={handle.close}>
-        <div>Hello modal</div>
-      </ModalContainer>
+      {/* default ให้ส่ง params แบบนี้ทุกการใช้ */}
+        <Modal modalState={modalState} onClose={handle.close}></Modal>
+      <button type="button" onClick={() => handle.toggle("create")}>
+        เรียก create
+      </button>
+
+      <button type="button" onClick={() => handle.toggle("Toom")}>
+        ยังไม่ได้ set up
+      </button>
+      <h1>ไปเพิ่ม component ที่อยากใช้ /components/ui/modal/modal</h1>
     </div>
   );
 }
