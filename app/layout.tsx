@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./styles/globals.scss";
-import Navbar from "@/app/components/layout/Navbar/navbar";
+import Navbar from "@/app/components/layout/navbar/navbar";
 const geistInter = Inter({
   variable: "--font-Inter",
   subsets: ["latin"],
@@ -13,18 +13,18 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-                                     children,
-                                   }: Readonly<{
+  children,
+}: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-      <html lang="en">
+    <html lang="en">
       <body className={`${geistInter.variable} `}>
-      <div className="layout-container">
-        <Navbar />
-        <main className="layout-content">{children}</main>
-      </div>
+        <div className="layout-container">
+          <Navbar />
+          <main className="layout-content">{children}</main>
+        </div>
       </body>
-      </html>
+    </html>
   );
 }

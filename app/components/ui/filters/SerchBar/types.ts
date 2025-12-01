@@ -1,4 +1,4 @@
-interface SearchBarProps {
-    onSearch: (searchTerm: string) => void;
-    placeholder?: string;
-}
+// export interface SearchBarProps {
+//   onSearch: (searchTerm: string) => void;
+//   placeholder?: string;
+// }

@@ -1,8 +1,8 @@
 import styles from "./navbar.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-
-const NavSlide = ({ menuMapPropsList, onClose }: navSlideProps) => {
+import { NavSlideProps } from "./types";
+const NavSlide = ({ menuMapPropsList, onClose }: NavSlideProps) => {
   return (
     <div className={styles.navSlide}>
       <div className={styles.navSlide_imageContainer}>

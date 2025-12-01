@@ -1,22 +1,22 @@
-interface BlogProps {
+export interface BlogProps {
   cover: string;
   title: string;
   url: string;
 }
 
-interface AdminProps {
+export interface AdminProps {
   profile: string;
   title: string;
   name: string;
   email: string;
   icon: string;
 }
-interface MenuMapProps {
+export interface MenuMapProps {
   title: string;
   path: string;
 }
 
-interface navSlideProps {
+export interface NavSlideProps {
   menuMapPropsList: MenuMapProps[];
   onClose: () => void;
 }

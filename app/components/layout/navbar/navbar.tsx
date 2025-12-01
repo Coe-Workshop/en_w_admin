@@ -1,14 +1,14 @@
 "use client";
 
-import styles from "./navbar.module.scss";
+import NavSlide from "@/app/components/layout/navbar/navslide";
+import ModalContainer from "@/app/components/layout/navbarContainer/navbarContainer";
+import Modal from "@/app/components/ui/modal/modal";
+import useDisclosure from "@/app/hook/useDisclosure";
+import { useModal } from "@/app/hook/useModal";
 import Image from "next/image";
 import Link from "next/link";
-import useDisclosure from "@/app/hook/useDisclosure";
-import Modal from "@/app/components/ui/modal/modal";
-import { useModal } from "@/app/hook/useModal";
-import ModalContainer from "@/app/components/layout/navbarContainer/navbarContainer";
-import NavSlide from "@/app/components/layout/Navbar/navslide";
-
+import styles from "./navbar.module.scss";
+import { AdminProps, BlogProps, MenuMapProps } from "./types";
 function Navbar() {
   const { opened, handle } = useDisclosure();
   const { modalState, handle: handleModal } = useModal();

@@ -15,7 +15,7 @@ const useDisclosure = () => {
 
   const toggle = useCallback(() => {
     setOpened((prev) => !prev);
-  }, [opened]);
+  }, []);
 
   return {
     opened,

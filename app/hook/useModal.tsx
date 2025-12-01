@@ -11,12 +11,9 @@ export const useModal = () => {
     setModalState((prev) => ({ ...prev, [modalName]: false }));
   }, []);
 
-  const toggle = useCallback(
-    (modalName: string) => {
-      setModalState((prev) => ({ ...prev, [modalName]: !prev.values }));
-    },
-    [modalState]
-  );
+  const toggle = useCallback((modalName: string) => {
+    setModalState((prev) => ({ ...prev, [modalName]: !prev[modalName] }));
+  }, []);
 
   return {
     modalState,
