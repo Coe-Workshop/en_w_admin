@@ -9,6 +9,8 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./navbar.module.scss";
 import { AdminProps, BlogProps, MenuMapProps } from "./types";
+import { prefix } from "@/app/utils/prefix";
+
 function Navbar() {
   const { opened, handle } = useDisclosure();
   const { modalState, handle: handleModal } = useModal();
@@ -36,11 +38,11 @@ function Navbar() {
   ];
 
   const Admin: AdminProps = {
-    profile: "/Navbar/admin.svg",
+    profile: `${prefix}/Navbar/admin.svg`,
     title: "Admin",
     name: "username",
     email: "Email@example.com",
-    icon: "/Navbar/meatBalls.svg",
+    icon: `${prefix}/Navbar/meatBalls.svg`,
   };
 
   const menuBlog = BlogList.map((item, index) => {
