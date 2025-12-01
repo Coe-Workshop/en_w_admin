@@ -18,6 +18,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Create .env.local file;
+        run: |
+          touch .env.local
+          echo NEXT_PUBLIC_BASE_PATH="/admin" > .env.local
+
       - name: Checkout
         uses: actions/checkout@v4
 
