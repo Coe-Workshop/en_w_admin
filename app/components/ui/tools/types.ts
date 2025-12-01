@@ -1,7 +1,7 @@
-interface ToolsMatches {
-    url: string;
-    title: string;
-    description: string;
-    available: number;
-    quatity: number;
-}
+// interface ToolsMatches {
+//     url: string;
+//     title: string;
+//     description: string;
+//     available: number;
+//     quatity: number;
+// }
