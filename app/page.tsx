@@ -1,11 +1,11 @@
+"use client";
 import styles from "./page.module.scss";
 
-function page(){
+function Page() {
   return (
-      <div className={styles.landing}>
-
-      </div>
+    <div className={styles.landing}>
+    </div>
   );
 }
 
-export default page;
+export default Page;
