@@ -1,11 +1,11 @@
+import { TableTransaction } from "./components/ui/tableTransaction/tableTransaction";
 import styles from "./page.module.scss";
 import Navbar from "@/app/components/Navbar/Navbar";
-
-function page(){
+function page() {
   return (
-      <div className={styles.landing}>
-        <Navbar></Navbar>
-      </div>
+    <div className={styles.landing}>
+      <TableTransaction></TableTransaction>
+    </div>
   );
 }
 

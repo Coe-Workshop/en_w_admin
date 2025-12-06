@@ -45,3 +45,29 @@ a {
     color-scheme: dark;
   }
 }
+
+table {
+  margin: 2rem;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+
+  th,
+  td {
+    padding: 1rem 2rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  thead th {
+    border-bottom: 1px solid #ddd;
+    font-weight: 600;
+  }
+  tbody tr {
+    transition: all 0.5s ease;
+  }
+
+  tbody tr:hover {
+    background-color: #ddd;
+  }
+}
