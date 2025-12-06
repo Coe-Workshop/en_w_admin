@@ -76,12 +76,12 @@ function Navbar() {
             >
               <Image
                 className={styles.action_plus}
-                width={22}
-                height={22}
+                width={120}
+                height={120}
                 alt="plus_icon"
                 src={"/navbar/plus.svg"}
               ></Image>
-              <p className={styles.text}>Quick Create</p>
+              <h2 className={styles.quickCreate}>Quick Create</h2>
             </button>
             <Image
               onClick={() => handle.open()}
