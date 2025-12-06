@@ -21,10 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistNoto.variable} `}>
-        <div className="layout-container">
-          <Navbar />
-          <main className="layout-content">{children}</main>
-        </div>
+        <main className="layout-content">{children}</main>
       </body>
     </html>
   );

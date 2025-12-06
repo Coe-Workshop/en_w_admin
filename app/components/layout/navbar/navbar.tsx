@@ -79,7 +79,7 @@ function Navbar() {
                 width={22}
                 height={22}
                 alt="plus_icon"
-                src={"/Navbar/plus.svg"}
+                src={"/navbar/plus.svg"}
               ></Image>
               <p className={styles.text}>Quick Create</p>
             </button>
@@ -89,7 +89,7 @@ function Navbar() {
               width={120}
               height={120}
               alt="hamberger_icon"
-              src={"/Navbar/hamberger.svg"}
+              src={"/navbar/hamberger.svg"}
             ></Image>
             {menuBlog}
           </div>
@@ -123,10 +123,7 @@ function Navbar() {
           ></NavSlide>
         </ModalContainer>
       </div>
-      <div
-        onClick={() => console.log("click")}
-        style={{ position: "absolute" }}
-      >
+      <div>
         <Modal
           modalState={modalState}
           onClose={() => handleModal.close("create")}

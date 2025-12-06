@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./login.module.scss";
-import { PasswordInput } from "../components/ui/passwordInput/passwordInput";
-import { TextInput } from "../components/ui/textInput/textInput";
+import { PasswordInput } from "../../components/ui/passwordInput/passwordInput";
+import { TextInput } from "../../components/ui/textInput/textInput";
 const Login = () => {
   return (
     <div>

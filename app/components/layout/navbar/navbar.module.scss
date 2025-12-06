@@ -1,12 +1,12 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/_breakpoints" as *;
-.container{
+.container {
   height: 100%;
 }
 .navbar {
   width: fit-content;
   background: $sub-50;
-  padding: 25px 18px;
+  padding: 1rem 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -29,18 +29,23 @@
     }
   }
   .logo {
-    font-size: 1.4rem;
     display: flex;
     align-items: baseline;
-    color: black;
-    font-weight: 600;
+    .logo_mark {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: $sub-1000;
+    }
     .logo_status {
       padding-left: 10px;
-      font-size: 0.9rem;
-      font-weight: 600;
+      font-size: 1rem;
+      color: $sub-1000;
+      font-weight: 500;
     }
     .logo_dot {
-      color: gray;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: $sub-400;
     }
   }
   .box {
